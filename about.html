@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Rantharu Machines and Tools (Pvt) Ltd</title>
+    <meta name="description"
+        content="Established in 2013, Rantharu Machines and Tools (Pvt) Ltd has over 10 years of industry experience as a well-recognized importer and distributor of machinery in Sri Lanka.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="images/rantharu_favicon.png" type="image/png">
+
+    <style>
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-text ul {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .about-text li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .about-text li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            background: var(--bg-light);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--primary-steel);
+        }
+
+        .stat-box.orange {
+            border-bottom-color: var(--accent-orange);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Rantharu Tools Logo" class="header-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container fade-in">
+                <h1>About Us</h1>
+                <div class="breadcrumb">Home / About Us</div>
+            </div>
+        </div>
+
+        <section class="section-pad">
+            <div class="container">
+                <div class="about-layout">
+                    <div class="about-text fade-in">
+                        <h2
+                            style="font-size: 2.2rem; color: var(--primary-steel); margin-bottom: 25px; font-family: var(--font-heading);">
+                            Our History & Operations</h2>
+
+                        <p><strong>Rantharu Machines and Tools (Private) Limited</strong> was established on
+                            <strong>27th September 2013</strong> by Mr. Mohamed Samsudeen Sheik Kamurdeen.
+                        </p>
+
+                        <p>With over <strong>10 years of industry experience</strong>, the company has grown into a
+                            well-recognized importer and distributor of machinery and tools in Sri Lanka.</p>
+
+                        <p>Based in the <strong>Central Province</strong>, we focus on delivering high-quality products
+                            to businesses across the country. Our operations are strictly
+                            <strong>wholesale-oriented</strong>, ensuring competitive pricing and reliable supply for
+                            our clients.
+                        </p>
+
+                        <p>We take pride in our:</p>
+                        <ul>
+                            <li>Experienced and dedicated team</li>
+                            <li>Strong supplier network</li>
+                            <li>Commitment to quality and customer satisfaction</li>
+                        </ul>
+
+                        <p>We also provide <strong>warranty support and after-sales service</strong>, ensuring long-term
+                            value for our customers.</p>
+
+                        <p style="margin-top: 30px; font-weight: 500; font-style: italic;">For inquiries, bulk orders,
+                            and pricing, feel free to contact us &mdash; we are always ready to serve you with the best
+                            solutions.</p>
+
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Contact Us</a>
+                    </div>
+
+                    <div class="about-stats fade-in" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80"
+                            alt="Industrial Machinery Setup"
+                            style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg); object-fit: cover; height: 350px;">
+
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-number">2013</div>
+                                <div class="stat-label">Year Established</div>
+                            </div>
+                            <div class="stat-box orange">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--bg-dark); color: var(--white); padding: 60px 20px 20px;">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--accent-orange);">RANTHARU</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 10px;">No. 231/A, D S Senanayake Street,<br>Kandy
+                        20000, Sri Lanka</p>
+                    <p style="color: var(--text-muted); margin-bottom: 5px;"> +94 81 741 5567</p>
+                    <p style="color: var(--text-muted);"> info@rantharutools.lk</p>
+                    <p style="color: var(--text-muted); margin-top: 10px;">ROC No. PV 94739<br>Incorporated 27 Sep 2013
+                    </p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="color: var(--text-muted); line-height: 2;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Our Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 20px;">Legal & Policies</h3>
+                    <ul style="color: var(--text-muted); line-height: 2;">
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="text-align: center; color: #666; font-size: 0.9rem; border-top: 1px solid #333; padding-top: 20px;">
+                &copy; 2023 Rantharu Machines and Tools (Pvt) Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

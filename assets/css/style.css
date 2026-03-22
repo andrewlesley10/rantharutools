@@ -1,0 +1,445 @@
+/* =========================================================================
+   Rantharu Machines and Tools (Pvt) Ltd - Yellow & Black Industrial Theme
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap');
+
+:root {
+  /* Brand Colors - Industrial Construction (Yellow & Black) */
+  --primary-steel: #000000;
+  /* Pure Black */
+  --primary-dark: #111111;
+  /* Carbon Black */
+  --accent-orange: #FFCC00;
+  /* Safety Yellow */
+  --accent-yellow: #E6B800;
+  /* Darker Yellow */
+
+  /* Neutrals - Third matching color is Concrete Gray */
+  --bg-dark: #111111;
+  --bg-card: #FFFFFF;
+  --bg-light: #F4F4F4;
+  /* Concrete Off-White */
+  --text-main: #333333;
+  --text-muted: #777777;
+  --text-dark: #000000;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --section-padding: 80px 20px;
+  --container-width: 1200px;
+
+  /* Transitions & Effects */
+  --transition: all 0.2s ease-in-out;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 4px 4px 0px rgba(0, 0, 0, 0.15);
+  /* Hard dropped shadow for that industrial look */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* subtle texture - lighter for concrete background */
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-light);
+  z-index: 1000;
+  box-shadow: 0 2px 0px var(--primary-steel);
+  transition: var(--transition);
+  border-bottom: 2px solid var(--accent-orange);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 90px;
+  max-width: 350px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--primary-steel);
+  text-transform: uppercase;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  /* thicker underline for bold look */
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-orange);
+  transition: var(--transition);
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--primary-steel);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  border-radius: 2px;
+  /* sharper, industrial edges */
+}
+
+.btn-primary {
+  background-color: var(--accent-orange);
+  color: var(--primary-steel);
+  /* Black text on yellow background */
+  border-color: var(--primary-steel);
+  box-shadow: 4px 4px 0px var(--primary-steel);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-steel);
+  border-color: var(--primary-steel);
+  color: var(--accent-orange);
+  /* Yellow text on black background on hover */
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--accent-orange);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-steel);
+  border: 2px solid var(--primary-steel);
+  box-shadow: 4px 4px 0px var(--primary-steel);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-steel);
+  color: var(--accent-orange);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px transparent;
+}
+
+/* =========================================
+   HERO SECTION (HOME)
+   ========================================= */
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--white);
+  padding-top: 120px;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeUp 1s ease forwards;
+  border-left: 6px solid var(--accent-orange);
+  /* Thicker yellow accent */
+  padding-left: 30px;
+}
+
+.hero-subtitle {
+  color: var(--accent-orange);
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: #DDDDDD;
+  font-family: var(--font-body);
+  max-width: 650px;
+}
+
+/* =========================================
+   GLOBAL SECTIONS
+   ========================================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  color: var(--primary-steel);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.section-title p {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+}
+
+main {
+  padding-top: 120px;
+  /* Offset for header on internal pages */
+}
+
+/* Page Headers */
+.page-header {
+  background: var(--primary-steel);
+  color: var(--white);
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 8px solid var(--accent-orange);
+}
+
+.page-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.page-header .breadcrumb {
+  color: var(--accent-orange);
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 1px;
+}
+
+/* Basic Padding for sections */
+.section-pad {
+  padding: var(--section-padding);
+}
+
+/* Custom Overrides for specific cards making them sharper */
+.feature-card,
+.product-card,
+.service-item,
+.policy-container,
+.contact-info,
+.contact-form,
+.stat-box {
+  border-radius: 2px !important;
+  border: 1px solid #E0E0E0 !important;
+  box-shadow: 4px 4px 0px var(--primary-steel) !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  background-color: var(--white);
+}
+
+.feature-card:hover,
+.product-card:hover,
+.service-item:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px var(--accent-orange) !important;
+}
+
+.stat-box.orange {
+  border-bottom-color: var(--accent-orange) !important;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 90px;
+    flex-direction: column;
+    background-color: var(--primary-steel);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    border-bottom: 5px solid var(--accent-orange);
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links li a {
+    color: var(--white);
+    font-size: 1.5rem;
+  }
+
+  .nav-links li a::after {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero {
+    padding-top: 90px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar {
+    height: 90px;
+  }
+
+  .header-logo {
+    height: 60px;
+    max-width: 220px;
+  }
+
+  main {
+    padding-top: 90px;
+  }
+}
