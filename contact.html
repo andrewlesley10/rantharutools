@@ -181,7 +181,10 @@
                     <div class="contact-form fade-in" style="transition-delay: 0.2s;">
                         <h2 style="font-size: 2rem; color: var(--primary-steel); margin-bottom: 25px;">Send a Message
                         </h2>
-                        <form action="contact.php" method="POST">
+                        <form id="contactForm">
+                            <div id="formMessage"
+                                style="display: none; padding: 15px; margin-bottom: 20px; border-radius: 6px; font-weight: bold;">
+                            </div>
                             <div class="form-group">
                                 <label for="name">Your Name <span style="color: red;">*</span></label>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="John Doe"
@@ -214,6 +217,59 @@
                 </div>
             </div>
         </section>
+    </main>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var form = this;
+            var btn = form.querySelector('button[type="submit"]');
+            var msgDiv = document.getElementById('formMessage');
+
+            btn.disabled = true;
+            btn.innerText = 'Sending...';
+            msgDiv.style.display = 'none';
+
+            var formData = new FormData(form);
+
+            fetch('contact.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    msgDiv.style.display = 'block';
+                    if (data.success) {
+                        msgDiv.style.backgroundColor = '#d4edda';
+                        msgDiv.style.color = '#155724';
+                        msgDiv.style.border = '1px solid #c3e6cb';
+                        msgDiv.innerText = data.message;
+                        form.reset();
+                    } else {
+                        msgDiv.style.backgroundColor = '#f8d7da';
+                        msgDiv.style.color = '#721c24';
+                        msgDiv.style.border = '1px solid #f5c6cb';
+                        msgDiv.innerText = data.message || 'An error occurred.';
+                    }
+                })
+                .catch(error => {
+                    msgDiv.style.display = 'block';
+                    msgDiv.style.backgroundColor = '#f8d7da';
+                    msgDiv.style.color = '#721c24';
+                    msgDiv.innerText = 'A network error occurred. Please try again.';
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.innerText = 'Send Message';
+                });
+        });
+    </script>
+    </div>
+
+    </div>
+    </div>
+    </section>
     </main>
 
     <!-- Footer -->

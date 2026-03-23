@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get and clean form values
     $name    = trim($_POST['name'] ?? '');
@@ -30,19 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
     if (mail($to, $subject, $body, $headers)) {
-        // Simple success page (for normal form submit)
-        echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Thank You - Rantharu Machines and Tools</title>";
-        echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
-        echo "<link rel='stylesheet' href='assets/css/style.css'></head><body style='text-align:center; padding: 100px 20px;'>";
-        echo "<h2 style='color: #1E3A5F; font-size: 2.5rem; margin-bottom: 20px;'>Thank you for your message!</h2>";
-        echo "<p style='font-size: 1.1rem; margin-bottom: 30px;'>We have received your enquiry and will get back to you soon.</p>";
-        echo "<p><a href='/' class='btn btn-primary'>Back to Home Page</a></p>";
-        echo "</body></html>";
+        echo json_encode(['success' => true, 'message' => 'Thank you for your message! We will get back to you soon.']);
     } else {
         http_response_code(500);
-        echo "Sorry, we could not send your message. Please try again later.";
+        echo json_encode(['success' => false, 'message' => 'Sorry, we could not send your message. Please try again later.']);
     }
 } else {
     http_response_code(405);
-    echo "Method not allowed.";
+    echo json_encode(['success' => false, 'message' => 'Method not allowed.']);
 }
