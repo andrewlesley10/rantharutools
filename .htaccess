@@ -1,6 +1,9 @@
 Options -MultiViews
 RewriteEngine On
 
+# Redirect root to /home
+RewriteRule ^$ /home [R=301,L]
+
 # Remove .html extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
