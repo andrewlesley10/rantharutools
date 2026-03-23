@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = trim($_POST['message'] ?? '');
 
     // Basic validation (server-side)
-    if ($name === '' || $email === '' || $phone === '' || $message === '') {
+    if ($name === '' || $email === '' || $message === '') {
         http_response_code(400);
         echo "Missing required fields.";
         exit;
